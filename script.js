@@ -2,6 +2,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const videoContainer = document.querySelector(".video-container");
     const searchForm = document.querySelector(".search-container form");
     const searchInput = document.querySelector(".search-container input");
+    const searchButton = document.querySelector(".search-container button");
     const chips = document.querySelectorAll(".chip");
     let videoDataArray = []; 
     let GamingArray = [];
@@ -48,7 +49,6 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     }
 
-    // Event listener for chips
     chips.forEach(chip => {
         chip.addEventListener("click", function() {
             
@@ -79,7 +79,7 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 
     
-    searchForm.addEventListener("submit", function(event) {
+    searchButton.addEventListener("click", function(event) {
         event.preventDefault(); 
 
         const searchQuery = searchInput.value.trim().toLowerCase();
