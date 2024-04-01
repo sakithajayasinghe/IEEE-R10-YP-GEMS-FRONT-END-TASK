@@ -78,8 +78,19 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     });
 
-    
     searchButton.addEventListener("click", function(event) {
+        event.preventDefault(); 
+
+        const searchQuery = searchInput.value.trim().toLowerCase();
+     
+        const searchResults = videoDataArray.filter(video =>
+            video.title.toLowerCase().includes(searchQuery)
+        );
+  
+        renderVideoContent(searchResults);
+    });
+
+    searchForm.addEventListener("submit", function(event) {
         event.preventDefault(); 
 
         const searchQuery = searchInput.value.trim().toLowerCase();
